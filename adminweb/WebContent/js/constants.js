@@ -7,7 +7,7 @@ var svrOpts = {
 		name: '테스트서버',
 		bs_style: 'primary',
 		base_web_uri: 'https://twww.open-platform.or.kr',
-		base_api_uri: 'https://testapi.open-platform.or.kr',
+		base_api_uri: 'https://testapi.openbanking.or.kr',
 		redirect_uri: 'http://localhost:8880/html/callback.html',
 		client_id: 'l7xx887c5a617205417f9088c4d4a83a9cc9',
 		client_secret: 'ee1e2ae7a98445a09088c30b9f278e7f',

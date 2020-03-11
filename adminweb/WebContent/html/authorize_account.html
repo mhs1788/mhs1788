@@ -43,7 +43,7 @@ function bindEvents(){
 function invokeAuthorize(){
 	
 	var frm = $('#authCodeReqFrm')[0];
-	frm.action = getSvrProps('base_api_uri') + '/oauth/2.0/authorize_account';
+	frm.action = getSvrProps('base_api_uri') + '/oauth/2.0/authorize';
 	frm.target = 'blank';
 	formSubmitWithExcludeInputs(frm, ['client_secret']);
 }
