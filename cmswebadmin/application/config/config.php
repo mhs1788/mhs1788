@@ -23,7 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+//$config['base_url'] = 'test.cmsadmin.com';
+$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+$config['base_url'] .= "://" . $_SERVER['HTTP_HOST'];
+$config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +38,8 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+//$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +56,8 @@ $config['index_page'] = 'index.php';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
-$config['uri_protocol']	= 'REQUEST_URI';
+//$config['uri_protocol']	= 'REQUEST_URI';
+$config['uri_protocol'] = 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -182,10 +187,16 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | use segment based URLs.
 |
 */
+// $config['enable_query_strings'] = FALSE;
+// $config['controller_trigger'] = 'c';
+// $config['function_trigger'] = 'm';
+// $config['directory_trigger'] = 'd';
+$config['allow_get_array']  = TRUE;
 $config['enable_query_strings'] = FALSE;
 $config['controller_trigger'] = 'c';
-$config['function_trigger'] = 'm';
-$config['directory_trigger'] = 'd';
+$config['function_trigger']  = 'm';
+$config['directory_trigger'] = 'd'; // experimental not currently in use
+
 
 /*
 |--------------------------------------------------------------------------
