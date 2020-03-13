@@ -75,8 +75,8 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	//'hostname' => 'localhost',
-	'hostname' => 'mhs1788.cafe24.com',
+	'hostname' => 'localhost',
+	//'hostname' => 'mhs1788.cafe24.com',
 	'username' => 'mhs1788',
 	'password' => 'sorasoo0@@',
 	'database' => 'mhs1788',
