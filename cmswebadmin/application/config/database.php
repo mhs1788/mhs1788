@@ -75,10 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	//'hostname' => 'localhost',
+	'hostname' => 'mhs1788.cafe24.com',
+	'username' => 'mhs1788',
+	'password' => 'sorasoo0@@',
+	'database' => 'mhs1788',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
