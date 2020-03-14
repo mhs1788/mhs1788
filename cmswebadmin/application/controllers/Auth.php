@@ -35,7 +35,7 @@ class Auth extends CI_Controller {
     public function login() {
         $this -> load -> library('form_validation');
  
-        //$this -> load -> helper('alert');
+       // $this -> load -> helper('alert');
  
         $this -> form_validation -> set_rules('username', '아이디', 'required|alpha_numeric');
         $this -> form_validation -> set_rules('password', '비밀번호', 'required');
@@ -59,10 +59,14 @@ class Auth extends CI_Controller {
                 
                 $this -> session -> set_userdata($newdata);
                 
-                alert('로그인 되었습니다.', '/bbs/board/lists/ci_board/page/1');
+               
+                echo ("<script>alert('로그인되었습니다.')</script>");
+                echo "<script>document.location.href='/side/side';</script>"; 
+
                 exit;
             } else {
-                alert('아이디나 비밀번호를 확인해 주세요.', '/bbs/board/lists/ci_board/page/1');
+                //alert('아이디나 비밀번호를 확인해 주세요.', '/bbs/board/lists/ci_board/page/1');
+                echo ("<script>alert('아이디나 비밀번호를 확인해주세요.')</script>");
                 exit;
             }
         } else {
@@ -71,12 +75,12 @@ class Auth extends CI_Controller {
     }
  
     public function logout() {
-        $this -> load -> helper('alert');
+        //$this -> load -> helper('alert');
         
         $this -> session -> sess_destroy();
         
         echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
-        alert('로그아웃 되었습니다.', '/bbs/board/lists/ci_board/page/1');
+       // alert('로그아웃 되었습니다.', '/bbs/board/lists/ci_board/page/1');
         exit;
         
     }

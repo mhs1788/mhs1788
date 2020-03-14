@@ -14,16 +14,22 @@ Class Auth_m extends CI_Model {
      * @return array
      */
     function login($auth) {
-        $sql = "SELECT username, email FROM users WHERE username = '" . $auth['username'] . "' AND password = '" . $auth['password'] . "' ";
-       
- 
-       
- 
+        $this->db->select("username, email", false);
+        $this->db->where('username',  $auth['username']);
+        $this->db->where('password', $auth['password']);
+      
+
+        $query = $this->db->get('users');
+
+         
         if ($query -> num_rows() > 0) {
+            
             return $query -> row();
-        } else {
+            
+        } else {            
             return FALSE;
         }
+        
     }
  
 }
